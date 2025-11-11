@@ -1,5 +1,7 @@
 module.exports = function(eleventyConfig) {
   // Copy static folders straight through
+  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy({"assets": "assets"});
   eleventyConfig.addPassthroughCopy({"data": "data"});
 
@@ -19,9 +21,8 @@ module.exports = function(eleventyConfig) {
 
   return {
     dir: {
-      input: "src",
+      input: ".",           // Changed from "src" to "." (root)
       includes: "_includes",
-      layouts: "_includes/layouts",
       output: "_site"
     },
     templateFormats: ["njk", "md", "html"]
