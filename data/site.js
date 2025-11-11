@@ -1,3 +1,1 @@
-module.exports = () => {
-  return { year: new Date().getFullYear() };
-};
+<small>&copy; {{ year }} Meridian Accord</small>
