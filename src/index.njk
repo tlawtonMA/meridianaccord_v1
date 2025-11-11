@@ -1,1664 +1,226 @@
 ---
 layout: base.njk
-title: Home
+title: The Meridian Accord - Finding Common Ground in Uncommon Times
+description: A platform to research and design forward-looking policies that restore resilience at home and strengthen America's role in a fragmenting world.
 ---
-<!-- Paste custom HTML/CSS below -->
-<h1>Welcome</h1><p><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Meridian Accord - Finding Common Ground in Uncommon Times</title>
-    <meta name="description" content="A platform to research and design forward-looking policies that restore resilience at home and strengthen America's role in a fragmenting world.">
-    <meta name="keywords" content="policy, american politics, bipartisan, research, governance, democracy">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-blue: #0A2140;
-            --primary-red: #c41e3a;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-light: #718096;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f7fafc;
-            --bg-accent: #edf2f7;
-            --border-light: #e2e8f0;
-            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header */
-        .header {
-            background: rgba(247, 250, 252, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-light);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .header.scrolled {
-            background: rgba(247, 250, 252, 0.98);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
-
-        .logo img {
-            width: 40px;
-            height: 48px;
-            object-fit: contain;
-        }
-
-        .nav {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
-        }
-
-        .nav a:hover {
-            color: var(--primary-blue);
-        }
-
-        .nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 6px;
-            left: 0;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
-            transition: width 0.3s ease;
-        }
-
-        .nav a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-        }
-
-        .logo-text {
-            display: inline;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-            padding: 6rem 0 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(10, 33, 64, 0.02) 0%, rgba(196, 30, 58, 0.02) 100%);
-            border-radius: 0 0 0 200px;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text h1 {
-            font-family: 'Fraunces', serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 2rem;
-            padding-bottom: 0.2rem;
-            color: var(--text-primary);
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .hero-emphasis {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: 2rem;
-            font-family: 'Fraunces', serif;
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-visual img {
-            max-width: 121%;
-            height: auto;
-            max-height: 484px;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
-            transition: transform 0.6s ease;
-        }
-
-        .hero-visual:hover img {
-            transform: scale(1.02) rotate(1deg);
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-lg);
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .cta-button:active {
-            transform: translateY(0);
-        }
-
-        /* Stats Section */
-        .stats-section {
-            padding: 4rem 0;
-            background: var(--bg-secondary);
-            position: relative;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: -2rem;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-light);
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
-        }
-
-        .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            display: block;
-            margin-bottom: 0.5rem;
-            font-family: 'Fraunces', serif;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Mission Section */
-        .mission {
-            padding: 6rem 0;
-            background: var(--bg-primary);
-        }
-
-        .mission-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: start;
-        }
-
-        .mission-card {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, white 100%);
-            padding: 3rem;
-            border-radius: 24px;
-            border: 1px solid var(--border-light);
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .mission-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .mission-card h2 {
-            font-family: 'Fraunces', serif;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-            position: relative;
-        }
-
-        .mission-card h2::after {
-            content: '';
-            position: absolute;
-            bottom: -0.5rem;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
-            border-radius: 2px;
-        }
-
-        .mission-card p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Pillars */
-        .pillars {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-        }
-
-        .pillars h2 {
-            text-align: center;
-            font-family: 'Fraunces', serif;
-            font-size: 2.5rem;
-            margin-bottom: 4rem;
-            color: var(--text-primary);
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .pillar-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            cursor: pointer;
-        }
-
-        .pillar-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .pillar-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .pillar-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .pillar-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-red));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .pillar-card:hover .pillar-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .pillar-card h3 {
-            font-family: 'Fraunces', serif;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            line-height: 1.3;
-        }
-
-        .pillar-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .pillar-link {
-            color: var(--primary-blue);
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .pillar-card:hover .pillar-link {
-            color: var(--primary-red);
-            transform: translateX(4px);
-        }
-
-        /* Research Highlight */
-        .research-highlight {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
-            padding: 5rem 0;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .research-highlight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: 100px 100px;
-            opacity: 0.3;
-        }
-
-        .research-highlight-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .research-highlight h3 {
-            font-family: 'Fraunces', serif;
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .research-highlight p {
-            max-width: 600px;
-            margin: 0 auto 2.5rem auto;
-            font-size: 1.2rem;
-            opacity: 0.95;
-            line-height: 1.7;
-        }
-
-        .secondary-button {
-            background: white;
-            color: var(--primary-blue);
-            padding: 1rem 2rem;
-            border: 2px solid white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .secondary-button:hover {
-            background: transparent;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Accord Moments */
-        .accord-moments {
-            padding: 6rem 0;
-            background: var(--bg-secondary);
-        }
-
-        .accord-moments h2 {
-            text-align: center;
-            font-family: 'Fraunces', serif;
-            font-size: 2.5rem;
-            margin-bottom: 4rem;
-            color: var(--text-primary);
-        }
-
-        .moments-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .moment-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-        }
-
-        .moment-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
-        }
-
-        .moment-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .moment-stat {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            display: block;
-            margin-bottom: 1rem;
-            font-family: 'Fraunces', serif;
-        }
-
-        .moment-card h4 {
-            font-family: 'Fraunces', serif;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .moment-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-        }
-
-        /* Newsletter */
-        .newsletter-signup {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, var(--text-primary) 0%, #2d3748 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .newsletter-signup h3 {
-            font-family: 'Fraunces', serif;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter-signup p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-        }
-
-        .newsletter-form {
-            max-width: 450px;
-            margin: 0 auto;
-            display: flex;
-            gap: 1rem;
-            background: white;
-            padding: 0.5rem;
-            border-radius: 50px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            outline: none;
-            background: transparent;
-        }
-
-        .newsletter-button {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-red));
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .newsletter-button:hover {
-            transform: scale(1.05);
-        }
-
-        /* Final CTA */
-        .final-cta {
-            padding: 2rem 0;
-        }
-
-        .final-cta-content {
-            text-align: center;
-            padding: 3rem 0;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
-            color: white;
-            border-radius: 24px;
-            margin: 2rem 0;
-        }
-
-        .final-cta h2 {
-            font-family: 'Fraunces', serif;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .final-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.95;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--text-primary);
-            color: white;
-            padding: 4rem 0 2rem 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            font-family: 'Fraunces', serif;
-            font-size: 1.2rem;
-        }
-
-        .footer-section p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.7;
-            max-width: 400px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(4px);
-        }
-
-        .footer-social {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-        }
-
-        .social-icon:hover {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-red));
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom a:hover {
-            color: white;
-        }
-
-        /* Modal */
-        .modal-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: none;
-        }
-
-        .modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            z-index: 1001;
-            box-shadow: var(--shadow-xl);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: none;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--bg-secondary);
-            padding-bottom: 1rem;
-        }
-
-        .modal-title {
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin: 0;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-light);
-            transition: color 0.3s ease;
-            padding: 0.5rem;
-            border-radius: 50%;
-        }
-
-        .modal-close:hover {
-            color: var(--text-primary);
-            background: var(--bg-secondary);
-        }
-
-        .modal-content {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .modal-content h4 {
-            color: var(--text-primary);
-            margin: 1.5rem 0 1rem 0;
-            font-family: 'Fraunces', serif;
-        }
-
-        .modal-content h5 {
-            color: var(--primary-blue);
-            margin: 1rem 0 0.5rem 0;
-            font-weight: 600;
-        }
-
-        .modal-content ul {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .modal-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .pillars-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(4, 1fr);
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .footer-content {
-                grid-template-columns: 2fr 1fr 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-social {
-                grid-column: 3;
-            }
-        }
-
-        @media (max-width: 968px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-visual {
-                order: -1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .header-content {
-                position: relative;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .logo-text {
-                display: none;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                gap: 0;
-                box-shadow: var(--shadow-lg);
-                border-radius: 0 0 16px 16px;
-                padding: 1rem 0;
-                display: none;
-            }
-
-            .nav.active {
-                display: flex;
-            }
-
-            .nav li {
-                padding: 0 2rem;
-            }
-
-            .nav a {
-                display: block;
-                padding: 1rem 0;
-                font-size: 1rem;
-                border-bottom: 1px solid var(--border-light);
-            }
-
-            .nav a::after {
-                display: none;
-            }
-
-            .nav li:last-child a {
-                border-bottom: none;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-            
-            .mission-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .pillars-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(8, 1fr);
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-            
-            .footer-section p {
-                max-width: none;
-            }
-            
-            .social-icons {
-                justify-content: center;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            animation: fadeInUp 0.8s ease-out;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="https://i.postimg.cc/CMrYHjVH/4-Shield-trans-Crop.png" alt="The Meridian Accord">
-                    <span class="logo-text">The Meridian Accord</span>
-                </div>
-                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
-                    ☰
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Navigating America's Future</h1>
+                <p class="hero-description">
+                    America is undergoing a profound transition. The global order that shaped the post-WWII era is being disrupted daily, while our institutions at home struggle to keep pace with new technologies, shifting demographics, and cultural divides.
+                </p>
+                <p class="hero-description">
+                    This isn't a short-term disruption but a structural shift, and to succeed and prosper into the next 'American Century', we must modernize our systems, rebuild domestic strength, and most importantly, restore trust in each other at home.
+                </p>
+                <p class="hero-emphasis">Enter the Meridian Accord.</p>
+                <button class="cta-button" onclick="document.getElementById('pillars').scrollIntoView({behavior: 'smooth'})">
+                    Explore the Issues
+                    <span>→</span>
                 </button>
-                <nav>
-                    <ul class="nav" id="mobile-nav">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#pillars">Policy Areas</a></li>
-                        <li><a href="#research">Research</a></li>
-                        <li><a href="#engage">Engage</a></li>
-                    </ul>
-                </nav>
+            </div>
+            <div class="hero-visual">
+                <img src="https://i.postimg.cc/ZKTBfPdC/4-Patriotic-transparent.png" alt="The Meridian Accord Logo">
             </div>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Navigating America's Future</h1>
-                    <p class="hero-description">
-                        America is undergoing a profound transition. The global order that shaped the post-WWII era is being disrupted daily, while our institutions at home struggle to keep pace with new technologies, shifting demographics, and cultural divides.
-                    </p>
-                    <p class="hero-description">
-                        This isn't a short-term disruption but a structural shift, and to succeed and prosper into the next 'American Century', we must modernize our systems, rebuild domestic strength, and most importantly, restore trust in each other at home.
-                    </p>
-                    <p class="hero-emphasis">Enter the Meridian Accord.</p>
-                    <button class="cta-button" onclick="document.getElementById('pillars').scrollIntoView({behavior: 'smooth'})">
-                        Explore the Issues
-                        <span>→</span>
-                    </button>
-                </div>
-                <div class="hero-visual">
-                    <img src="https://i.postimg.cc/ZKTBfPdC/4-Patriotic-transparent.png" alt="The Meridian Accord Logo">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">70%</span>
-                    <div class="stat-label">Americans seek middle ground</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">7</span>
-                    <div class="stat-label">Core policy areas</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">2,000+</span>
-                    <div class="stat-label">Survey responses collected</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">85%</span>
-                    <div class="stat-label">Want bipartisan solutions</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="mission" id="about">
-        <div class="container">
-            <div class="mission-container">
-                <div class="mission-card">
-                    <h2>Our Meridian</h2>
-                    <p>
-                        Like navigators of old used meridian lines to find their way, we provide a reference point 
-                        for Americans seeking truth in a sea of information. This is not about left or right—it's about forward.
-                    </p>
-                    <p>
-                        We believe that beneath the surface tensions, Americans share more common ground than we're led to believe. 
-                        Our mission is to illuminate that shared terrain through research and thoughtful analysis, which will inform policies designed to strengthen America from within and prepare us all for a better tomorrow.
-                    </p>
-                </div>
-                
-                <div class="mission-card">
-                    <h2>Our Accord</h2>
-                    <p>
-                        An accord is more than agreement—it's harmony of purpose. We seek to unite Americans around our shared aspirations: prosperity for all, security for our nation, and opportunity for future generations.
-                    </p>
-                    <p>
-                        Through respectful dialogue and evidence-based solutions, we're building consensus on the policies that will define America's next chapter. This accord isn't imposed from above—it emerges from the wisdom of citizens working together toward common goals.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pillars Section -->
-    <section class="pillars" id="pillars">
-        <div class="container">
-            <h2>Pillars of American Renewal</h2>
-            <div class="pillars-grid">
-                <div class="pillar-card" onclick="expandPillar(this, 'technology')">
-                    <div class="pillar-icon">⚡</div>
-                    <h3>Technology & Innovation</h3>
-                    <p>Navigating AI, automation, and digital transformation while preserving human agency and opportunity.</p>
-                    <a href="#" class="pillar-link">Explore Framework →</a>
-                </div>
-                
-                <div class="pillar-card" onclick="expandPillar(this, 'infrastructure')">
-                    <div class="pillar-icon">🏗️</div>
-                    <h3>Infrastructure & Resilience</h3>
-                    <p>Building robust, adaptable systems that connect communities and strengthen America's foundation.</p>
-                    <a href="#" class="pillar-link">Explore Framework →</a>
-                </div>
-                
-                <div class="pillar-card" onclick="expandPillar(this, 'labor')">
-                    <div class="pillar-icon">👥</div>
-                    <h3>Labor & Workforce</h3>
-                    <p>Preparing Americans for tomorrow's jobs while honoring the dignity of all honest work.</p>
-                    <a href="#" class="pillar-link">Explore Framework →</a>
-                </div>
-                
-                <div class="pillar-card" onclick="expandPillar(this, 'education')">
-                    <div class="pillar-icon">📚</div>
-                    <h3>Education & Learning</h3>
-                    <p>Reimagining how we prepare citizens for lifelong learning and civic engagement.</p>
-                    <a href="#" class="pillar-link">Explore Framework →</a>
-                </div>
-                
-                <div class="pillar-card" onclick="expandPillar(this, 'regional')">
-                    <div class="pillar-icon">🌟</div>
-                    <h3>Regional Development</h3>
-                    <p>Strengthening local economies and communities as the foundation of national prosperity.</p>
-                    <a href="#" class="pillar-link">Explore Framework →</a>
-                </div>
-                
-                <div class="pillar-card" onclick="expandPillar(this, 'economic')">
-                    <div class="pillar-icon">💼</div>
-                    <h3>Economic & Industrial Policy</h3>
-                    <p>Balancing market freedom with strategic national interests in a transforming economy.</p>
-                    <a href="#" class="pillar-link">Explore Framework →</a>
-                </div>
-                
-                <div class="pillar-card" onclick="expandPillar(this, 'governance')">
-                    <div class="pillar-icon">🏛️</div>
-                    <h3>Governance & Institutions</h3>
-                    <p>Modernizing democratic institutions to restore trust and effectiveness.</p>
-                    <a href="#" class="pillar-link">Explore Framework →</a>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-icon">🔮</div>
-                    <h3>Future Focus Area</h3>
-                    <p>We're developing our next policy pillar based on emerging national priorities.</p>
-                    <a href="#" class="pillar-link">Stay Tuned →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Highlight -->
-    <section class="research-highlight" id="research">
-        <div class="container">
-            <div class="research-highlight-content">
-                <h3>We underestimate our common ground</h3>
-                <p>
-                    Our research reveals that Americans are more unified than divided on key issues. 
-                    Through comprehensive polling and analysis, we're uncovering the common ground that exists beneath surface-level disagreements.
-                </p>
-                <a href="#" class="secondary-button" onclick="showResearchModal()">View Latest Research</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Accord Moments -->
-    <section class="accord-moments">
-        <div class="container">
-            <h2>Areas of Agreement</h2>
-            <div class="moments-grid">
-                <div class="moment-card">
-                    <span class="moment-stat">78%</span>
-                    <h4>Infrastructure Investment</h4>
-                    <p>Believe America needs significant infrastructure modernization regardless of party affiliation</p>
-                </div>
-                
-                <div class="moment-card">
-                    <span class="moment-stat">71%</span>
-                    <h4>Education Priority</h4>
-                    <p>Agree that education reform is critical for America's future competitiveness</p>
-                </div>
-                
-                <div class="moment-card">
-                    <span class="moment-stat">69%</span>
-                    <h4>Economic Opportunity</h4>
-                    <p>Want policies that create pathways to middle-class prosperity for all Americans</p>
-                </div>
-                
-                <div class="moment-card">
-                    <span class="moment-stat">73%</span>
-                    <h4>Institutional Trust</h4>
-                    <p>Believe American institutions need modernization to meet current challenges</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="newsletter-signup">
-        <div class="container">
-            <h3>Stay Informed</h3>
-            <p>Get the latest research findings, policy briefs, and insights delivered to your inbox.</p>
-            <div class="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Enter your email address" id="newsletter-email">
-                <button class="newsletter-button" onclick="subscribeNewsletter()">Subscribe</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="final-cta" id="engage">
-        <div class="container">
-            <div class="final-cta-content">
-                <h2>Join the Conversation</h2>
-                <p>
-                    The challenges facing America are complex, but they're not insurmountable. 
-                    They require the kind of thoughtful, principled discussion that built this nation.
-                </p>
-                <div class="cta-buttons">
-                    <button class="cta-button" onclick="showEngagementModal()" style="background: white; color: var(--primary-blue);">Get Involved</button>
-                    <button class="secondary-button" onclick="showPolicyModal()">Read Policy Briefs</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <!-- Column 1: About content -->
-                <div class="footer-section">
-                    <h4>The Meridian Accord</h4>
-                    <p>A platform to research and design forward-looking policies that restores resilience at home and strengthens America's role in a fragmenting world, ensuring our institutions, economy, and society are ready for the next American century.</p>
-                </div>
-                
-                <!-- Column 2: Empty for now -->
-                <div></div>
-                
-                <!-- Column 3: Navigation links -->
-                <div class="footer-links">
-                    <a href="#about">About Us</a>
-                    <a href="#pillars">Policy Areas</a>
-                    <a href="#research">Research</a>
-                    <a href="#engage">Get Involved</a>
-                </div>
-                
-                <!-- Column 4: Social media -->
-                <div class="footer-social">
-                    <div class="social-icons">
-                        <a href="#" class="social-icon" aria-label="Twitter">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="Facebook">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="YouTube">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 The Meridian Accord. All rights reserved. | <a href="#" onclick="showPrivacyModal()">Privacy Policy</a> | <a href="#" onclick="showTermsModal()">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Modal Elements -->
-    <div class="modal-backdrop" id="modal-backdrop" onclick="closeModal()"></div>
-    <div class="modal" id="generic-modal">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modal-title"></h3>
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-        </div>
-        <div class="modal-content" id="modal-content"></div>
     </div>
+</section>
 
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">70%</span>
+                <div class="stat-label">Americans seek middle ground</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">7</span>
+                <div class="stat-label">Core policy areas</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">2,000+</span>
+                <div class="stat-label">Survey responses collected</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">85%</span>
+                <div class="stat-label">Want bipartisan solutions</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const nav = document.getElementById('mobile-nav');
-            nav.classList.toggle('active');
-        }
-
-        // Close mobile menu when clicking on links
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                const nav = document.getElementById('mobile-nav');
-                nav.classList.remove('active');
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            const nav = document.getElementById('mobile-nav');
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            const header = document.querySelector('.header-content');
+<!-- Mission Section -->
+<section class="mission" id="about">
+    <div class="container">
+        <div class="mission-container">
+            <div class="mission-card">
+                <h2>Our Meridian</h2>
+                <p>
+                    Like navigators of old used meridian lines to find their way, we provide a reference point 
+                    for Americans seeking truth in a sea of information. This is not about left or right—it's about forward.
+                </p>
+                <p>
+                    We believe that beneath the surface tensions, Americans share more common ground than we're led to believe. 
+                    Our mission is to illuminate that shared terrain through research and thoughtful analysis, which will inform policies designed to strengthen America from within and prepare us all for a better tomorrow.
+                </p>
+            </div>
             
-            if (!header.contains(e.target)) {
-                nav.classList.remove('active');
-            }
-        });
+            <div class="mission-card">
+                <h2>Our Accord</h2>
+                <p>
+                    An accord is more than agreement—it's harmony of purpose. We seek to unite Americans around our shared aspirations: prosperity for all, security for our nation, and opportunity for future generations.
+                </p>
+                <p>
+                    Through respectful dialogue and evidence-based solutions, we're building consensus on the policies that will define America's next chapter. This accord isn't imposed from above—it emerges from the wisdom of citizens working together toward common goals.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // Pillar expansion functionality
-        function expandPillar(element, pillarType) {
-            const pillarData = {
-                technology: {
-                    title: "Technology & Innovation Framework",
-                    content: `
-                        <h4>Key Policy Areas:</h4>
-                        <ul>
-                            <li><strong>AI Governance:</strong> Establish frameworks for responsible AI development and deployment</li>
-                            <li><strong>Digital Infrastructure:</strong> Expand broadband access and 5G networks nationwide</li>
-                            <li><strong>Cybersecurity:</strong> Strengthen national cyber resilience and public-private partnerships</li>
-                            <li><strong>Innovation Ecosystem:</strong> Support R&D investment and tech talent development</li>
-                        </ul>
-                        <h4>Current Research Findings:</h4>
-                        <p>76% of Americans support increased federal investment in emerging technologies, with bipartisan agreement on the need for ethical AI guidelines and enhanced cybersecurity measures.</p>
-                        <h4>Policy Recommendations:</h4>
-                        <p>Implement a National Technology Strategy that balances innovation with security, establishes clear regulatory frameworks, and ensures equitable access to digital opportunities across all communities.</p>
-                    `
-                },
-                infrastructure: {
-                    title: "Infrastructure & Resilience Framework",
-                    content: `
-                        <h4>Key Policy Areas:</h4>
-                        <ul>
-                            <li><strong>Physical Infrastructure:</strong> Modernize roads, bridges, and transportation systems</li>
-                            <li><strong>Energy Grid:</strong> Build resilient, renewable energy infrastructure</li>
-                            <li><strong>Water Systems:</strong> Upgrade aging water and wastewater infrastructure</li>
-                            <li><strong>Climate Resilience:</strong> Prepare infrastructure for climate change impacts</li>
-                        </ul>
-                        <h4>Current Research Findings:</h4>
-                        <p>82% of Americans view infrastructure investment as essential, with strong support across party lines for modernization efforts that create jobs and improve competitiveness.</p>
-                        <h4>Policy Recommendations:</h4>
-                        <p>Launch a comprehensive infrastructure renewal program focused on resilience, sustainability, and job creation, with dedicated funding mechanisms and performance metrics.</p>
-                    `
-                },
-                labor: {
-                    title: "Labor & Workforce Framework",
-                    content: `
-                        <h4>Key Policy Areas:</h4>
-                        <ul>
-                            <li><strong>Skills Training:</strong> Expand workforce development and retraining programs</li>
-                            <li><strong>Worker Protections:</strong> Modernize labor standards for the gig economy</li>
-                            <li><strong>Career Pathways:</strong> Create clear routes to middle-class careers</li>
-                            <li><strong>Economic Security:</strong> Strengthen social safety nets for changing work patterns</li>
-                        </ul>
-                        <h4>Current Research Findings:</h4>
-                        <p>74% of Americans believe the government should help workers adapt to technological change, with broad support for skills training and portable benefits.</p>
-                        <h4>Policy Recommendations:</h4>
-                        <p>Establish a National Workforce Investment Strategy that provides lifelong learning opportunities, portable benefits, and clear pathways to economic advancement.</p>
-                    `
-                },
-                education: {
-                    title: "Education & Learning Framework",
-                    content: `
-                        <h4>Key Policy Areas:</h4>
-                        <ul>
-                            <li><strong>K-12 Innovation:</strong> Modernize curriculum and teaching methods</li>
-                            <li><strong>Higher Education:</strong> Make college more affordable and relevant</li>
-                            <li><strong>Lifelong Learning:</strong> Support continuous skill development</li>
-                            <li><strong>Civic Education:</strong> Strengthen democratic knowledge and engagement</li>
-                        </ul>
-                        <h4>Current Research Findings:</h4>
-                        <p>79% of Americans believe education reform is critical for competitiveness, with strong support for both traditional academic excellence and practical skills training.</p>
-                        <h4>Policy Recommendations:</h4>
-                        <p>Implement comprehensive education modernization that emphasizes both academic achievement and practical skills, with increased investment in teacher training and educational technology.</p>
-                    `
-                },
-                regional: {
-                    title: "Regional Development Framework",
-                    content: `
-                        <h4>Key Policy Areas:</h4>
-                        <ul>
-                            <li><strong>Rural Revitalization:</strong> Support rural economic diversification and growth</li>
-                            <li><strong>Urban Innovation:</strong> Enhance city competitiveness and livability</li>
-                            <li><strong>Regional Connectivity:</strong> Improve transportation and digital links</li>
-                            <li><strong>Local Capacity:</strong> Strengthen local governance and civic institutions</li>
-                        </ul>
-                        <h4>Current Research Findings:</h4>
-                        <p>68% of Americans believe federal policy should support both urban and rural development, with recognition that strong regions contribute to national prosperity.</p>
-                        <h4>Policy Recommendations:</h4>
-                        <p>Create place-based development strategies that leverage regional strengths, improve connectivity, and ensure all communities can participate in economic growth.</p>
-                    `
-                },
-                economic: {
-                    title: "Economic & Industrial Policy Framework",
-                    content: `
-                        <h4>Key Policy Areas:</h4>
-                        <ul>
-                            <li><strong>Industrial Strategy:</strong> Support key manufacturing and technology sectors</li>
-                            <li><strong>Trade Policy:</strong> Balance free trade with strategic interests</li>
-                            <li><strong>Supply Chain Resilience:</strong> Reduce critical dependencies</li>
-                            <li><strong>Innovation Investment:</strong> Fund R&D and emerging technologies</li>
-                        </ul>
-                        <h4>Current Research Findings:</h4>
-                        <p>72% of Americans support strategic government investment in key industries, with bipartisan agreement on the need for supply chain resilience and innovation leadership.</p>
-                        <h4>Policy Recommendations:</h4>
-                        <p>Develop a comprehensive economic strategy that combines market mechanisms with strategic government investment to ensure American competitiveness and resilience.</p>
-                    `
-                },
-                governance: {
-                    title: "Governance & Institutions Framework",
-                    content: `
-                        <h4>Key Policy Areas:</h4>
-                        <ul>
-                            <li><strong>Government Effectiveness:</strong> Modernize federal agencies and processes</li>
-                            <li><strong>Democratic Participation:</strong> Enhance voter access and civic engagement</li>
-                            <li><strong>Transparency:</strong> Improve government accountability and openness</li>
-                            <li><strong>Federal-State Relations:</strong> Clarify roles and improve coordination</li>
-                        </ul>
-                        <h4>Current Research Findings:</h4>
-                        <p>77% of Americans want government to be more effective and responsive, with broad support for modernization efforts that improve service delivery and accountability.</p>
-                        <h4>Policy Recommendations:</h4>
-                        <p>Launch comprehensive government modernization focused on effectiveness, transparency, and citizen engagement, with clear performance metrics and accountability measures.</p>
-                    `
-                }
-            };
-
-            if (pillarData[pillarType]) {
-                showModal(pillarData[pillarType].title, pillarData[pillarType].content);
-            }
-        }
-
-        // Modal functionality
-        function showModal(title, content) {
-            document.getElementById('modal-title').textContent = title;
-            document.getElementById('modal-content').innerHTML = content;
+<!-- Pillars Section -->
+<section class="pillars" id="pillars">
+    <div class="container">
+        <h2>Pillars of American Renewal</h2>
+        <div class="pillars-grid">
+            <div class="pillar-card" onclick="expandPillar(this, 'technology')">
+                <div class="pillar-icon">⚡</div>
+                <h3>Technology & Innovation</h3>
+                <p>Navigating AI, automation, and digital transformation while preserving human agency and opportunity.</p>
+                <a href="#" class="pillar-link">Explore Framework →</a>
+            </div>
             
-            const backdrop = document.getElementById('modal-backdrop');
-            const modal = document.getElementById('generic-modal');
+            <div class="pillar-card" onclick="expandPillar(this, 'infrastructure')">
+                <div class="pillar-icon">🏗️</div>
+                <h3>Infrastructure & Resilience</h3>
+                <p>Building robust, adaptable systems that connect communities and strengthen America's foundation.</p>
+                <a href="#" class="pillar-link">Explore Framework →</a>
+            </div>
             
-            backdrop.style.display = 'block';
-            modal.style.display = 'block';
+            <div class="pillar-card" onclick="expandPillar(this, 'labor')">
+                <div class="pillar-icon">👥</div>
+                <h3>Labor & Workforce</h3>
+                <p>Preparing Americans for tomorrow's jobs while honoring the dignity of all honest work.</p>
+                <a href="#" class="pillar-link">Explore Framework →</a>
+            </div>
             
-            requestAnimationFrame(() => {
-                backdrop.style.opacity = '1';
-                modal.style.opacity = '1';
-                modal.style.transform = 'translate(-50%, -50%) scale(1)';
-            });
-        }
-
-        function closeModal() {
-            const backdrop = document.getElementById('modal-backdrop');
-            const modal = document.getElementById('generic-modal');
+            <div class="pillar-card" onclick="expandPillar(this, 'education')">
+                <div class="pillar-icon">📚</div>
+                <h3>Education & Learning</h3>
+                <p>Reimagining how we prepare citizens for lifelong learning and civic engagement.</p>
+                <a href="#" class="pillar-link">Explore Framework →</a>
+            </div>
             
-            backdrop.style.opacity = '0';
-            modal.style.opacity = '0';
-            modal.style.transform = 'translate(-50%, -50%) scale(0.9)';
+            <div class="pillar-card" onclick="expandPillar(this, 'regional')">
+                <div class="pillar-icon">🌟</div>
+                <h3>Regional Development</h3>
+                <p>Strengthening local economies and communities as the foundation of national prosperity.</p>
+                <a href="#" class="pillar-link">Explore Framework →</a>
+            </div>
             
-            setTimeout(() => {
-                backdrop.style.display = 'none';
-                modal.style.display = 'none';
-            }, 300);
-        }
+            <div class="pillar-card" onclick="expandPillar(this, 'economic')">
+                <div class="pillar-icon">💼</div>
+                <h3>Economic & Industrial Policy</h3>
+                <p>Balancing market freedom with strategic national interests in a transforming economy.</p>
+                <a href="#" class="pillar-link">Explore Framework →</a>
+            </div>
+            
+            <div class="pillar-card" onclick="expandPillar(this, 'governance')">
+                <div class="pillar-icon">🏛️</div>
+                <h3>Governance & Institutions</h3>
+                <p>Modernizing democratic institutions to restore trust and effectiveness.</p>
+                <a href="#" class="pillar-link">Explore Framework →</a>
+            </div>
+            
+            <div class="pillar-card">
+                <div class="pillar-icon">🔮</div>
+                <h3>Future Focus Area</h3>
+                <p>We're developing our next policy pillar based on emerging national priorities.</p>
+                <a href="#" class="pillar-link">Stay Tuned →</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // Modal content functions
-        function showResearchModal() {
-            showModal("Latest Research Findings", `
-                <h4>Recent Studies:</h4>
-                <div style="margin-bottom: 1.5rem;">
-                    <h5>Cross-Party Policy Preferences (2024)</h5>
-                    <p>Our comprehensive survey of 2,000+ Americans reveals surprising consensus on key policy priorities, with 70% finding common ground on infrastructure, education, and economic opportunity.</p>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <h5>Regional Economic Resilience Report</h5>
-                    <p>Analysis of regional economic trends and policy needs across different geographic areas, highlighting successful models for local development.</p>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <h5>Technology & Democratic Participation Study</h5>
-                    <p>Examining how digital tools can enhance civic engagement while protecting democratic values and privacy rights.</p>
-                </div>
-                <p><strong>Download full reports and datasets from our research portal.</strong></p>
-            `);
-        }
+<!-- Research Highlight -->
+<section class="research-highlight" id="research">
+    <div class="container">
+        <div class="research-highlight-content">
+            <h3>We underestimate our common ground</h3>
+            <p>
+                Our research reveals that Americans are more unified than divided on key issues. 
+                Through comprehensive polling and analysis, we're uncovering the common ground that exists beneath surface-level disagreements.
+            </p>
+            <a href="#" class="secondary-button" onclick="showResearchModal()">View Latest Research</a>
+        </div>
+    </div>
+</section>
 
-        function showEngagementModal() {
-            showModal("Get Involved", `
-                <h4>Join Our Community:</h4>
-                <div style="margin-bottom: 1.5rem;">
-                    <h5>Policy Working Groups</h5>
-                    <p>Participate in focused discussions on specific policy areas with experts and fellow citizens.</p>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <h5>Local Forums</h5>
-                    <p>Attend or organize community discussions on national issues and local solutions.</p>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <h5>Research Participation</h5>
-                    <p>Contribute to our ongoing research through surveys, interviews, and focus groups.</p>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <h5>Content Contribution</h5>
-                    <p>Share your expertise through policy briefs, analysis, and commentary.</p>
-                </div>
-                <p><strong>Contact us to learn more about engagement opportunities in your area.</strong></p>
-            `);
-        }
+<!-- Accord Moments -->
+<section class="accord-moments">
+    <div class="container">
+        <h2>Areas of Agreement</h2>
+        <div class="moments-grid">
+            <div class="moment-card">
+                <span class="moment-stat">78%</span>
+                <h4>Infrastructure Investment</h4>
+                <p>Believe America needs significant infrastructure modernization regardless of party affiliation</p>
+            </div>
+            
+            <div class="moment-card">
+                <span class="moment-stat">71%</span>
+                <h4>Education Priority</h4>
+                <p>Agree that education reform is critical for America's future competitiveness</p>
+            </div>
+            
+            <div class="moment-card">
+                <span class="moment-stat">69%</span>
+                <h4>Economic Opportunity</h4>
+                <p>Want policies that create pathways to middle-class prosperity for all Americans</p>
+            </div>
+            
+            <div class="moment-card">
+                <span class="moment-stat">73%</span>
+                <h4>Institutional Trust</h4>
+                <p>Believe American institutions need modernization to meet current challenges</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        function showPolicyModal() {
-            showModal("Policy Brief Library", `
-                <h4>Latest Policy Briefs:</h4>
-                <div style="margin-bottom: 1rem;">
-                    <h5>Modernizing American Infrastructure</h5>
-                    <p>A comprehensive framework for 21st-century infrastructure investment</p>
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <h5>AI Governance and Democratic Values</h5>
-                    <p>Balancing innovation with ethical considerations and public oversight</p>
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <h5>Workforce Development for the Digital Economy</h5>
-                    <p>Preparing American workers for economic transformation</p>
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <h5>Regional Development Strategies</h5>
-                    <p>Supporting economic growth across urban and rural communities</p>
-                </div>
-                <p><strong>Access our full library of policy analysis and recommendations.</strong></p>
-            `);
-        }
+<!-- Newsletter Signup -->
+<section class="newsletter-signup">
+    <div class="container">
+        <h3>Stay Informed</h3>
+        <p>Get the latest research findings, policy briefs, and insights delivered to your inbox.</p>
+        <div class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" id="newsletter-email">
+            <button class="newsletter-button" onclick="subscribeNewsletter()">Subscribe</button>
+        </div>
+    </div>
+</section>
 
-        function subscribeNewsletter() {
-            const email = document.getElementById('newsletter-email').value;
-            if (email && email.includes('@')) {
-                showModal("Thank You!", `
-                    <p>Thank you for subscribing to The Meridian Accord newsletter!</p>
-                    <p>You'll receive our latest research findings, policy briefs, and insights on building common ground in American politics.</p>
-                    <p>We respect your privacy and will never share your email address.</p>
-                `);
-                document.getElementById('newsletter-email').value = '';
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        }
+<!-- Final CTA -->
+<section class="final-cta" id="engage">
+    <div class="container">
+        <div class="final-cta-content">
+            <h2>Join the Conversation</h2>
+            <p>
+                The challenges facing America are complex, but they're not insurmountable. 
+                They require the kind of thoughtful, principled discussion that built this nation.
+            </p>
+            <div class="cta-buttons">
+                <button class="cta-button" onclick="showEngagementModal()" style="background: white; color: var(--primary-blue);">Get Involved</button>
+                <button class="secondary-button" onclick="showPolicyModal()">Read Policy Briefs</button>
+            </div>
+        </div>
+    </div>
+</section>
 
-        function showPrivacyModal() {
-            showModal("Privacy Policy", `
-                <h4>Your Privacy Matters:</h4>
-                <p>The Meridian Accord is committed to protecting your privacy and personal information.</p>
-                <h4>What We Collect:</h4>
-                <ul>
-                    <li>Email addresses for newsletter subscriptions</li>
-                    <li>Survey responses for research purposes</li>
-                    <li>Website usage analytics (anonymized)</li>
-                </ul>
-                <h4>How We Use Information:</h4>
-                <p>We use your information solely for research, communication, and improving our services. We never sell or share personal data with third parties.</p>
-                <p>You can unsubscribe from communications or request data deletion at any time.</p>
-            `);
-        }
-
-        function showTermsModal() {
-            showModal("Terms of Service", `
-                <h4>Terms of Use:</h4>
-                <p>By using this website, you agree to these terms and conditions.</p>
-                <h4>Acceptable Use:</h4>
-                <ul>
-                    <li>Respectful, civil discourse in all interactions</li>
-                    <li>No harassment, hate speech, or personal attacks</li>
-                    <li>Factual accuracy in contributed content</li>
-                    <li>Respect for intellectual property rights</li>
-                </ul>
-                <h4>Content Policy:</h4>
-                <p>We welcome diverse viewpoints but maintain standards for respectful dialogue and factual accuracy. Content may be moderated to ensure quality discussions.</p>
-            `);
-        }
-
-        // Keyboard navigation for modals
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Smooth scroll for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll('.stat-card, .mission-card, .pillar-card, .moment-card');
-            animateElements.forEach(el => observer.observe(el));
-        });
-    </script>
-</body>
-</html></p>
+{% endblock %}
