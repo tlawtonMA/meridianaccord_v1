@@ -100,8 +100,6 @@ body {
     height: 2px;
     bottom: 6px;
     left: 0;
-    background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
-    transition: width 0.3s ease;
 }
 
 .nav a:hover::after {
